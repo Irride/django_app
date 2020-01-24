@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block html_title %}\
+    {{block.super}} - I am landing page!
+{% endblock html_title%}
+
+{% block content %}
+    <p>Hello {{name}}!</p>
+    <p>Активний користувач {{user.email}}</p>
+    <p>Today {{now|date:"D d M Y"}}</p>
+    <h2>List of students</h2>
+    <ul>
+        {% for name in students %}
+        <li>{{name}}</li>
+        {% endfor %}
+    <p>Random: {{students|random}}</p>
+    </ul>
+{% endblock content %}
+    

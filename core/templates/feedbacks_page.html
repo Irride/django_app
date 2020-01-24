@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block html_title %}
+    Feedbacks page!
+{% endblock html_title %}
+
+
+{% block content %}
+    {% if has_contacted %}
+    <P> Дякуємо за комент, він на перевірці</P>
+    {% endif %}
+    <ul>
+    {% for feedback in feedbacks %}
+        <li>{{feedback.created_at}} - {{feedback.name_m}} - {{feedback.text_m|truncatechars:30}}</li>
+    {% empty %}
+    <li>Поки відгуків, немає будь першим</li>
+    {% endfor %}
+    </ul>
+    
+{% endblock content %}

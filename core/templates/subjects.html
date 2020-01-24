@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block html_title %}
+    subjects page!
+{% endblock html_title %}
+
+
+{% block content %}
+<ul>
+    {% for subject in subjects %}
+        <li><a href=https://t.me/{{subject.name_bot}} target="_blank">
+            <img src="https://cdn3.iconfinder.com/data/icons/social-media-chamfered-corner/154/telegram-512.png" width="16px" height="16px" title="Telegram_bot: {{subject.name_bot}}" alt="Telegram icon">
+            <!-- <b>{{subject.name_bot}}</b> -->
+            </a>
+            <a href="/subjects/{{subject.name_bot}}"><b>{{subject.name_bot}}</b></a>
+            <br>
+            <!-- <i>Автор:</i> <a href="mailto:{{subject.author.email}}"><p>{{subject.author.name}}</a> -->
+                <i>Автор:</i> <a href="/subjects?author={{subject.author.name}}">{{subject.author.name}}</a>
+                
+            <br/>{{subject.description}}<hr/>
+        </li>
+    {% empty%}
+    <li>No subjects yet</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
+
