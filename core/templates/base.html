@@ -10,10 +10,22 @@
     {% endblock html_title%}
     </title>
 </head>
-<body>
+<header>
+    <table bgcolor="#c0c0c0"  width="100%">
+        <tr>
+            <td><h1><a href="/">My First Website!</a></h1></td>
+            <td><a href="/subjects/">Боти ЗНО</a></td>
+            <td><a href="/contact-us/">Contacts</a></td>
+            <td><a href="/feedbacks/">Feedbacks</a></td>
+            <td><a href="/about-us/">About</a></td>
+            <td><a href="/admin/">Admin</a></td>
+        </tr>
+    </table>
+</header>
+<!-- <body>
     <header>
         <h1>My first website!</h1>
-    </header>
+    </header> -->
     {% block content %}
     {% endblock content %}
 
